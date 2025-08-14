@@ -75,37 +75,45 @@ def assemble_transaction(
     :return: The assembled transaction.
     """
     if vkey_witnesses:
+        print(f"Adding verification key witnesses to the transaction: {vkey_witnesses}")
         transaction.transaction_witness_set.vkey_witnesses = _update_witness_set(
             transaction.transaction_witness_set.vkey_witnesses, vkey_witnesses
         )
 
     if native_scripts:
+        print(f"Adding native scripts witnesses to the transaction: {native_scripts}")
         transaction.transaction_witness_set.native_scripts = _update_witness_set(
             transaction.transaction_witness_set.native_scripts, native_scripts
         )
 
     if bootstrap_witness:
+        print(f"Adding bootstrap witness witnesses to the transaction: {bootstrap_witness}")
         transaction.transaction_witness_set.bootstrap_witness.extend(bootstrap_witness)
 
     if plutus_data:
+        print(f"Adding plutus data witnesses to the transaction: {plutus_data}")
         transaction.transaction_witness_set.plutus_data = _update_witness_set(
             transaction.transaction_witness_set.plutus_data, plutus_data
         )
 
     if redeemer:
+        print(f"Adding redeemer witnesses to the transaction: {redeemer}")
         transaction.transaction_witness_set.redeemer = redeemer
 
     if plutus_v1_script:
+        print(f"Adding plutus_v1_script to the transaction: {plutus_v1_script}")
         transaction.transaction_witness_set.plutus_v1_script = _update_witness_set(
             transaction.transaction_witness_set.plutus_v1_script, plutus_v1_script
         )
 
     if plutus_v2_script:
+        print(f"Adding plutus_v2_script to the transaction: {plutus_v2_script}")
         transaction.transaction_witness_set.plutus_v2_script = _update_witness_set(
             transaction.transaction_witness_set.plutus_v2_script, plutus_v2_script
         )
 
     if plutus_v3_script:
+        print(f"Adding plutus_v3_script to the transaction: {plutus_v3_script}")
         transaction.transaction_witness_set.plutus_v3_script = _update_witness_set(
             transaction.transaction_witness_set.plutus_v3_script, plutus_v3_script
         )
